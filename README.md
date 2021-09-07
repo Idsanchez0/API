@@ -1,6 +1,4 @@
-# VIBRA-api
 
-Conjunto de servicios REST-API para aplicación movil y web de www.soyvibra.com
 
 ## Instalación
 
