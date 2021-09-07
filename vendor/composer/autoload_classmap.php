@@ -1365,6 +1365,7 @@ return array(
     'Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse' => $vendorDir . '/illuminate/cookie/Middleware/AddQueuedCookiesToResponse.php',
     'Illuminate\\Cookie\\Middleware\\EncryptCookies' => $vendorDir . '/illuminate/cookie/Middleware/EncryptCookies.php',
     'Illuminate\\Database\\Capsule\\Manager' => $vendorDir . '/illuminate/database/Capsule/Manager.php',
+    'Illuminate\\Database\\ClassMorphViolationException' => $vendorDir . '/illuminate/database/ClassMorphViolationException.php',
     'Illuminate\\Database\\Concerns\\BuildsQueries' => $vendorDir . '/illuminate/database/Concerns/BuildsQueries.php',
     'Illuminate\\Database\\Concerns\\ExplainsQueries' => $vendorDir . '/illuminate/database/Concerns/ExplainsQueries.php',
     'Illuminate\\Database\\Concerns\\ManagesTransactions' => $vendorDir . '/illuminate/database/Concerns/ManagesTransactions.php',

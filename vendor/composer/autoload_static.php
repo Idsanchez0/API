@@ -45,15 +45,15 @@ class ComposerStaticInit948cc4b3360e613eb78231bc40bf9348
         '751a5a3f463e4be759be31748b61737c' => __DIR__ . '/..' . '/laminas/laminas-diactoros/src/functions/parse_cookie_header.legacy.php',
         'ef65a1626449d89d0811cf9befce46f0' => __DIR__ . '/..' . '/illuminate/events/functions.php',
         'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
-        '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
+        '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
-        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '224094a1512cc731f289dd11c03ea6b3' => __DIR__ . '/..' . '/dusterio/lumen-passport/src/helpers.php',
-        'bee9632da3ca00a99623b9c35d0c4f8b' => __DIR__ . '/..' . '/laravel/lumen-framework/src/helpers.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        'bee9632da3ca00a99623b9c35d0c4f8b' => __DIR__ . '/..' . '/laravel/lumen-framework/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -488,8 +488,8 @@ class ComposerStaticInit948cc4b3360e613eb78231bc40bf9348
         ),
         'Illuminate\\Support\\' => 
         array (
-            0 => __DIR__ . '/..' . '/illuminate/collections',
-            1 => __DIR__ . '/..' . '/illuminate/macroable',
+            0 => __DIR__ . '/..' . '/illuminate/macroable',
+            1 => __DIR__ . '/..' . '/illuminate/collections',
             2 => __DIR__ . '/..' . '/illuminate/support',
         ),
         'Illuminate\\Session\\' => 
@@ -2052,6 +2052,7 @@ class ComposerStaticInit948cc4b3360e613eb78231bc40bf9348
         'Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse' => __DIR__ . '/..' . '/illuminate/cookie/Middleware/AddQueuedCookiesToResponse.php',
         'Illuminate\\Cookie\\Middleware\\EncryptCookies' => __DIR__ . '/..' . '/illuminate/cookie/Middleware/EncryptCookies.php',
         'Illuminate\\Database\\Capsule\\Manager' => __DIR__ . '/..' . '/illuminate/database/Capsule/Manager.php',
+        'Illuminate\\Database\\ClassMorphViolationException' => __DIR__ . '/..' . '/illuminate/database/ClassMorphViolationException.php',
         'Illuminate\\Database\\Concerns\\BuildsQueries' => __DIR__ . '/..' . '/illuminate/database/Concerns/BuildsQueries.php',
         'Illuminate\\Database\\Concerns\\ExplainsQueries' => __DIR__ . '/..' . '/illuminate/database/Concerns/ExplainsQueries.php',
         'Illuminate\\Database\\Concerns\\ManagesTransactions' => __DIR__ . '/..' . '/illuminate/database/Concerns/ManagesTransactions.php',
