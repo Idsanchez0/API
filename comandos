@@ -1,0 +1,7 @@
+docker-compose build && docker-compose up -d //Este comando inicializa el contenedor y lo sube
+docker exec -it vib-api-php /bin/sh --Este comando me abre un terminar de linux del contenedor docker
+php artisan make:migration create_table_tipos_identificaciones --create=tipos_identificaciones --Crear una tabla con migrations
+php artisan migrate --Crea las tablas en la base de datos y se ejecuta desde el terminal de linux
+php artisan make:migration alter_unique_identificacion_table_profesionales --table=profesionales --Comando para alterar las tablas
+php artisan db:seed --Comando para crear datos ficticios en una tabla
+php artisan make:livewire <<nombre con el path>>
