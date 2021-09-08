@@ -47,6 +47,8 @@ class ClienteController extends Controller
             $datosResponse = [
                 'id' => $appUser->id,
             ];
+            $externalURL = config('vibra.external_url');
+            $verifyPath = config('vibra.verify_path');
             $notificationArray = [
                 'via' => ['mail'],
                 'mail' => [
@@ -54,7 +56,8 @@ class ClienteController extends Controller
                     'template' => 'mail.notificacion.registro-template',
                     'variables' => [
                         'nombre' => $request->nombre . ' ' . $request->apellido,
-                        'url' => url() . '/api/cliente/verify/' . $datosCliente['verificar_id'],
+                        'url_verify' => $externalURL . $verifyPath . $datosCliente['verificar_id'],
+                        'url' => $externalURL,
                     ],
                 ],
             ];

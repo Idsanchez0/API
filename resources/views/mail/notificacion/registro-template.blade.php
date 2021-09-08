@@ -1,8 +1,8 @@
 @component('mail::layout')
     {{-- Header --}}
     @slot('header')
-        @component('mail::header', ['url' => url('/')])
-            <img src="{{ url('/'). '/img/logo.png' }}" class="width-2" width="20%" height="20%">
+        @component('mail::header', ['url' => 'https://www.soyvibra.com'])
+            <img src="{{ $url . '/img/logo.png' }}" class="width-2" width="20%" height="20%">
         @endcomponent
     @endslot
 
@@ -13,7 +13,7 @@
     @slot('subcopy')
         @component('mail::subcopy')
             Para confirmar tu registro en SoyVibra, por favor has click en el siguiente enlace:
-            @component('mail::button', ['url' => $url])
+            @component('mail::button', ['url' => $url_verify])
                 Click aquí
             @endcomponent
 
