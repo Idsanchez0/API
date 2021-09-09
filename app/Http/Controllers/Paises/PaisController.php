@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Paises;
 
 use App\Http\Controllers\Controller;
 use App\Models\Pais\Paises;
+use App\Models\Ubicacion\Pais;
 use App\Traits\ApiResponseTrait;
 use Illuminate\Http\Request;
 
@@ -27,5 +28,7 @@ class PaisController extends Controller
         $datosResponse = Paises::get();
         return $this->successResponse($datosResponse, 'Paises creados');
     }
+
+  
 
 }
