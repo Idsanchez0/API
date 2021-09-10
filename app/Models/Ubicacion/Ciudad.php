@@ -15,6 +15,7 @@ class Ciudad extends Model
         'codigo',
         'nombre',
         'estado',
+        'pais_id'
     ];
 
     /**

@@ -8,6 +8,8 @@ use App\Models\Ubicacion\Ciudad;
 use App\Models\Ubicacion\Pais;
 use Illuminate\Http\Request;
 use App\Traits\ApiResponseTrait;
+use Exception;
+use Illuminate\Support\Facades\Log;
 
 class UbicacionController extends Controller
 {
@@ -32,39 +34,51 @@ class UbicacionController extends Controller
     public function listPais()
     {
 
-        $data_pais=Pais::get();
+        try{
+            $data_pais=Pais::get();
 
-        foreach($data_pais as $key=>$value){
-            $datosResponse[] =[
-                'id'=>$value->id,
-                'codigo'=>$value->codigo,
-                'nombre'=>$value->nombre,
-                'estado'=>$value->estado,
-
-            ];
+            foreach($data_pais as $key=>$value){
+                $datosResponse[] =[
+                    'id'=>$value->id,
+                    'codigo'=>$value->codigo,
+                    'nombre'=>$value->nombre,
+                    'estado'=>$value->estado,
+    
+                ];
+            }
+    
+            
+            return $this->successResponse($datosResponse, 'Paises');
+        }catch (Exception $exception) {
+            Log::debug($exception->getMessage());
+            return $this->errorResponse($exception->getCode());
         }
-
         
-        return $this->successResponse($datosResponse, 'Paises');
     }
 
-    public function listCiudades()
+    public function listCiudades($id)
     {
-
-        $data_ciudad=Ciudad::get();
-        $datosResponse1=[];
-        foreach($data_ciudad as $key=>$value){
-            $datosResponse1[] =[
-                'id'=>$value->id,
-                'pais_id'=>$value->pais_id,
-                'codigo'=>$value->codigo,
-                'nombre'=>$value->nombre,
-                'estado'=>$value->estado,
-
-            ];
+        try{
+            $data_ciudad=Ciudad::where('pais_id',$id)->get();
+            $datosResponse=[];
+            foreach($data_ciudad as $key=>$value){
+                $datosResponse[] =[
+                    'id'=>$value->id,
+                    'pais_id'=>$value->pais_id,
+                    'codigo'=>$value->codigo,
+                    'nombre'=>$value->nombre,
+                    'estado'=>$value->estado,
+    
+                ];
+            }
+    
+            
+            return $this->successResponse($datosResponse, 'Ciudades');
+        }catch (Exception $exception) {
+            Log::debug($exception->getMessage());
+            return $this->errorResponse($exception->getCode());
         }
 
-        
-        return $this->successResponse($datosResponse1, 'Ciudades');
+       
     }
 }

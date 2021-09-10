@@ -72,6 +72,39 @@ class ClienteController extends Controller
     }
 
 
+    public function show($id)
+    {
+        try{
+            
+            $datosResponse=[];
+            $data=AppUser::with('pais')->with('ciudad')->find($id);
+
+            if(is_object($data)){
+                $datosResponse[] =[
+                    'id'=>$data->id,
+                    'nombres'=>$data->nombre ." ".$data->apellido,
+                    'telefono'=>$data->telefono,
+                    'correo'=>$data->correo,
+                    //'clave'=>$data->clave,
+                    'estado'=>$data->estado,
+                    'pais'=>$data->pais->nombre,
+                    'ciudad'=>$data->ciudad->nombre,
+                    'estado'=>$data->estado,
+                    
+                ];
+        
+                
+                return $this->successResponse($datosResponse, 'Clientes');
+            }else{
+                return $this->successResponse($datosResponse, 'Sin Registros');
+            }
+            
+            
+        }catch (Exception $exception) {
+            Log::debug($exception->getMessage());
+            return $this->errorResponse($exception->getCode());
+        }
+    }
     public function update(Request $request,$id)
     {
         try {

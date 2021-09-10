@@ -2,6 +2,8 @@
 
 namespace App\Models\App;
 
+use App\Models\Ubicacion\Pais;
+use App\Models\Ubicacion\Ciudad;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
@@ -33,6 +35,16 @@ class AppUser extends Model implements AuthenticatableContract, AuthorizableCont
         'verificar_id',
     ];
 
+    public function pais()
+    {
+        return $this->belongsTo(Pais::class,'pais_id','id');
+    }
+
+    public function ciudad()
+    {
+        return $this->belongsTo(Ciudad::class,'ciudad_id','id');
+    }
+
     public function findForPassport($username)
     {
         return $this->where('correo', $username)->first();
@@ -52,4 +64,6 @@ class AppUser extends Model implements AuthenticatableContract, AuthorizableCont
     {
         return $this->correo;
     }
+
+
 }

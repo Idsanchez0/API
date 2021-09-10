@@ -26,6 +26,7 @@ $router->group(['middleware' => 'auth:api'], function () use ($router) {
 $router->group(['prefix' => 'api/cliente'], function () use ($router) {
     $router->post('store', 'App\Cliente\ClienteController@store');
     $router->post('update/{id}', 'App\Cliente\ClienteController@update');
+    $router->get('show/{id}', 'App\Cliente\ClienteController@show');
     $router->post('login', 'App\Cliente\ClienteController@login');
     $router->get('verify/{id}', 'App\Cliente\ClienteController@verify');
     $router->post('change/{id}', 'App\Cliente\ClienteController@change');
@@ -37,7 +38,7 @@ $router->group(['prefix' => 'api/cliente'], function () use ($router) {
 $router->group(['prefix' => 'api/ubicacion'], function () use ($router) {
     $router->get('/index[/{id}]', 'App\UbicacionController@index');
     $router->get('/listPais', 'App\UbicacionController@listPais');
-    $router->get('/listCiudad', 'App\UbicacionController@listCiudades');
+    $router->get('/listCiudad/{id}', 'App\UbicacionController@listCiudades');
 });
 
 
