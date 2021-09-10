@@ -82,14 +82,17 @@ class ClienteController extends Controller
             if(is_object($data)){
                 $datosResponse[] =[
                     'id'=>$data->id,
-                    'nombres'=>$data->nombre ." ".$data->apellido,
+                    'nombres'=>$data->nombre,
+                    'apellidos'=>$data->apellido,
                     'telefono'=>$data->telefono,
                     'correo'=>$data->correo,
-                    //'clave'=>$data->clave,
+                    'clave'=>$data->clave,
                     'estado'=>$data->estado,
                     'pais'=>$data->pais->nombre,
                     'ciudad'=>$data->ciudad->nombre,
                     'estado'=>$data->estado,
+                    'pais_id'=>$data->pais->id,
+                    'ciudad_id'=>$data->ciudad->id,
                     
                 ];
         
